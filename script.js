@@ -1,5 +1,20 @@
 /** Help */
 
+/* prevent submit form */
+var ready = (callback) => {
+  if (document.readyState != "loading") callback();
+  else document.addEventListener("DOMContentLoaded", callback);
+}
+
+ready(() => {
+  document.addEventListener("keypress", (e) => {
+    if (e.keyCode == 13) {
+      e.preventDefault();
+      createCard();
+    }
+  });
+});
+
 /* set theme of favicon */
 matcher = window.matchMedia('(prefers-color-scheme: dark)');
 matcher.addListener(onUpdate);
@@ -95,6 +110,8 @@ function createCards({ id, cardText, position }) {
   statusContainer.appendChild(deleteCard);
   cardElement.appendChild(statusContainer);
   cardElement.appendChild(cardTextElement);
+  cardElement.addEventListener('dragstart', dragstart);
+  cardElement.addEventListener('dragend', dragend);
 
   document.getElementById(position).appendChild(cardElement);
 }
@@ -139,7 +156,7 @@ function createCard() {
     saveCards();
   }
 
-  location.reload();
+  document.querySelector('.text-input').value = "";
 }
 
 function cancelCreateCard() {
