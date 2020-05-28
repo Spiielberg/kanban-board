@@ -1,0 +1,183 @@
+:root {
+  --main-color: 253, 149, 31;
+}
+
+html {
+  font-family: 'Nunito';
+}
+
+body {
+  background-color: #130f0d;
+  color: #fff;
+}
+
+.boards {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 32px;
+}
+
+.board {
+  background-color: #141316;
+  border: 1px solid rgba(var(--main-color), 0.1);
+  border-radius: 4px;
+  margin: 0 12px;
+}
+
+.board h3 {
+  padding: 16px;
+  margin: 0;
+  color: rgba(var(--main-color), 0.8);
+  cursor: default;
+}
+
+.dropzone, .createCard {
+  padding: 16px;
+  min-width: 282px;
+  min-height: 200px;
+}
+
+.card {
+  padding: 16px;
+  margin: 25px 0;
+  box-shadow: 0 2px 2px -1px rgba(var(--main-color), 0.8);
+  width: 250px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  background-color: #1a1a1c;
+  touch-action: none;
+  user-select: none;
+}
+
+.card, .dropzone, .createCard {
+  transition: 250ms;
+}
+
+.statusContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  justify-items: center;
+}
+
+.status {
+  width: 30px;
+  height: 8px;
+  border-radius: 8px;
+}
+
+#done .status {
+  background-color: #00ff7f;
+}
+
+#progress .status {
+  background-color: #ff0;
+}
+
+#todo .status {
+  background-color: #f00;
+}
+
+#test .status {
+  background-color: blue;
+}
+
+.statusContainer img {
+  width: 16px;
+  cursor: pointer;
+}
+
+.highlight {
+  background-color: rgba(var(--main-color), 0.1);
+}
+
+.over {
+  background-color: #4cd13711;
+}
+
+.is-dragging {
+  cursor: grab;
+  opacity: 0.25;
+}
+
+.is-dragging:active {
+  cursor: grabbing;
+}
+
+.form-card {
+  margin-top: 25px;
+}
+
+.text-area {
+  font-family: 'Nunito';
+  width: 278px;
+  height: 100px;
+  border: 0;
+  box-shadow: 0 2px 2px -1px #ccc;
+  outline: 0;
+  font-size: 16px;
+  color: #fff;
+  background: #1a1a1c;
+  resize: vertical;
+}
+
+.text-area:focus {
+  box-shadow: 0 2px 2px -1px rgba(var(--main-color), 0.8);
+}
+
+.container-btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  position: relative;
+  margin-top: 12px;
+  padding: 8px;
+  width: 120px;
+  overflow: hidden;
+  border-width: 0;
+  outline: none;
+  border-radius: 2px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .6);
+  background-color: rgba(var(--main-color), 0.8);
+  color: #fff;
+  transition: background-color 250ms;
+}
+
+.btn:hover, .btn:focus {
+  background-color: rgba(var(--main-color), 0.6);
+}
+
+.btn > * {
+  position: relative;
+}
+
+.btn span {
+  display: block;
+  padding: 12px 24px;
+}
+
+.btn:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 0;
+  padding-top: 0;
+  border-radius: 100%;
+  background-color: rgba(236, 240, 241, .3);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.btn:active:before {
+  width: 120%;
+  padding-top: 120%;
+  transition: width .2s ease-out, padding-top .2s ease-out;
+}

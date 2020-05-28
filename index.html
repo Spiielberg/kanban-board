@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban Board</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800,900">
+  </head>
+  <body>
+    <div class="boards">
+      <div class="board">
+        <h3>Todo</h3>
+        <div class="dropzone" id="todo">
+        </div>
+      </div>
+      <div class="board">
+        <h3>In progress</h3>
+        <div class="dropzone" id="progress">
+        </div>
+      </div>
+      <div class="board">
+        <h3>Done</h3>
+        <div class="dropzone" id="done">
+        </div>
+      </div>
+      <div class="board">
+        <h3>Create card</h3>
+        <div class="createCard">
+          <form class="form-card">
+            <textarea type="text" name="textArea" class="text-area" placeholder="Text"></textarea><br>
+            <div class="container-btn">
+              <button class="btn" type="button" onclick="cancelCreateCard()">CANCEL</button>
+              <button class="btn" type="button" onclick="createCard()">CREATE</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
