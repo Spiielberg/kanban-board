@@ -105,7 +105,7 @@ function drop () {
 /* create and delete cards */
 
 function createCard() {
-  const cardText = document.querySelector('.text-area').value;
+  const cardText = document.querySelector('.text-input').value;
 
   if (cardText !== "" ) {
     const card = {
@@ -122,7 +122,7 @@ function createCard() {
 }
 
 function cancelCreateCard() {
-  document.querySelector('.text-area').value = "";
+  document.querySelector('.text-input').value = "";
 }
 
 function deleteCard(id) {
