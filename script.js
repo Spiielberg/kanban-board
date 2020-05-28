@@ -1,3 +1,24 @@
+/** Help */
+
+/* set theme of favicon */
+matcher = window.matchMedia('(prefers-color-scheme: dark)');
+matcher.addListener(onUpdate);
+onUpdate();
+
+function onUpdate() {
+  const darkSchemeIcon = document.querySelector('link#dark-icon');
+  const lightSchemeIcon = document.querySelector('link#light-icon');
+
+  if (matcher.matches) {
+    lightSchemeIcon.remove();
+    document.head.append(darkSchemeIcon);
+  } else {
+    document.head.append(lightSchemeIcon);
+    darkSchemeIcon.remove();
+  }
+}
+
+/** App */
 loadCards();
 const cards = document.querySelectorAll('.card');
 const dropzones = document.querySelectorAll('.dropzone');
