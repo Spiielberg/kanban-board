@@ -67,6 +67,7 @@ body {
   justify-content: space-between;
   align-items: center;
   justify-items: center;
+  margin-bottom: 8px;
 }
 
 .status {
@@ -76,19 +77,24 @@ body {
 }
 
 #done .status {
-  background-color: #00ff7f;
+  background-color: #00ff00dd;
 }
 
 #progress .status {
-  background-color: #ff0;
+  background-color: #ffff00dd;
 }
 
 #todo .status {
-  background-color: #f00;
+  background-color: #ff0000dd;
 }
 
-.statusContainer img {
-  width: 16px;
+.deleteCard {
+  display: flex;
+}
+
+.deleteCard img {
+  height: 16px;
+  margin: 2px 8px;
   cursor: pointer;
 }
 

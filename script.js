@@ -154,16 +154,46 @@ function createCard() {
 
     createCards(card);
     saveCards();
+    clearInput();
   }
-
-  document.querySelector('.text-input').value = "";
 }
 
-function cancelCreateCard() {
+function clearInput() {
   document.querySelector('.text-input').value = "";
 }
 
 function deleteCard(id) {
+  const deleteCard = document.getElementById(`${id}`).children[0].querySelector('.deleteCard');
+  deleteCard.innerHTML = '';
+
+  const imgCancelDelete = document.createElement('img');
+  imgCancelDelete.setAttribute('src', 'assets/cancel.svg');
+  imgCancelDelete.setAttribute('alt', 'Cancel delete card');
+  imgCancelDelete.setAttribute('onclick', `cancelDelete('${id}')`);
+
+  const imgConfirmDelete = document.createElement('img');
+  imgConfirmDelete.setAttribute('src', 'assets/confirm.svg');
+  imgConfirmDelete.setAttribute('alt', 'Confirm delete card');
+  imgConfirmDelete.setAttribute('onclick', `confirmDelete('${id}')`);
+
+  deleteCard.appendChild(imgCancelDelete);
+  deleteCard.appendChild(imgConfirmDelete);
+}
+
+function cancelDelete(id) {
+  const deleteCard = document.getElementById(`${id}`).children[0].querySelector('.deleteCard');
+
+  deleteCard.innerHTML = '';
+
+  const imgDelete = document.createElement('img');
+  imgDelete.setAttribute('src', 'assets/delete.svg');
+  imgDelete.setAttribute('alt', 'Delete card');
+  imgDelete.setAttribute('onclick', `deleteCard('${id}')`);
+
+  deleteCard.appendChild(imgDelete);
+}
+
+function confirmDelete(id) {
   document.getElementById(`${id}`).remove();
   saveCards();
 }
